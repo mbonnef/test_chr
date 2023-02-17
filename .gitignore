@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+.vscode
+
+# Archivo .env con acceso a la base de datos
+# *.env
+
+# entorno virtual
+venv_chr
