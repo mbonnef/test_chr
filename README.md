@@ -21,11 +21,11 @@ La lista completa de ellas se encuentra en el archivo ``requirements.txt``
 Se recomienda instalar las librerías en un entorno virtual, para lo cual se deben seguir los siguientes pasos:
 
 ```
-git clone url
-cd dir
+git clone [url](https://github.com/mbonnef/test_chr)
+cd test_chr
 python -m venv venv
-source venv/Scripts/Activate
-pip install requirements.txt
+. venv/Scripts/activate
+pip install -r requirements.txt
 ```
 
 Nota: El proyecto está configurado para conectarse a una base de datos PostgreSQL llamada `chr_db`, por lo que previamente [PostgreSQL](https://www.postgresql.org/) debe
@@ -74,9 +74,11 @@ Notas:
 
 # Panel de administrador
 
-Todas las entidades generadas pueden ser visualizadas y modificadas en el panel de administrador, al cual se puede acceder a través de la barra de navegación. Para ingresar a él se dejó de manera preconfigurada una cuenta de *superuser* con los datos:
+Todas las entidades generadas pueden ser visualizadas y modificadas en el panel de administrador, al cual se puede acceder a través de la barra de navegación.
+Para ingresar a él, se debe hacer una cuenta de *superuser* a través del siguiente comando:
 
 ```
-user: chr
-password: 1234
+python manage.py createsuperuser
 ```
+
+Se pedirá que se ingrese un nombre de usuario, correo y contraseña. Posteriormente, se puede ingresar con ellos al panel de administrador.
