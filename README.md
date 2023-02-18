@@ -1,6 +1,6 @@
 # Introducción
 
-El repositorio consiste del desarrollo del Test Práctico para la postulación a CHR.
+El repositorio consiste del desarrollo del Test Práctico para la postulación al cargo de Developer en CHR.
 Para este, se tuvieron que resolver dos tareas ocupando el framework Django:
 
 (1) Acceder a los datos desde la API [Bike Santiago](http://api.citybik.es/v2/networks/bikesantiago), crear un modelo para guardar los datos obtenidos.
@@ -13,8 +13,8 @@ así como también en el panel de administrador.
 
 # Dependencias
 
-Para el desarrollo del proyecto se ocupó el framework Django, así como librerías de _web scrapping_ y análisis y manejo de datos.
-La lista completa de ellas se encuentra en el archivo requirements.txt
+Para el desarrollo del proyecto se ocupó el framework [Django](https://www.djangoproject.com/), así como librerías de _web scrapping_ y análisis y manejo de datos.
+La lista completa de ellas se encuentra en el archivo ``requirements.txt``
 
 # Ejecución del proyecto
 
@@ -29,7 +29,9 @@ pip install requirements.txt
 ```
 
 Nota: El proyecto está configurado para conectarse a una base de datos PostgreSQL llamada `chr_db`, por lo que previamente [PostgreSQL](https://www.postgresql.org/) debe
-ser instalado y la base de datos creada en `pgAdmin4` ocupando la contraseña `1234` de acuerdo a lo configurado en el archivo `/test_chr/.env`
+ser instalado y la base de datos creada en `pgAdmin4` ocupando la contraseña `1234` de acuerdo a lo configurado en el archivo `/test_chr/.env`.
+
+Para consultar la instalación de este se recomienda [revisar la siguiente guía](https://medium.com/star-gazers/data-workflow-with-django-pandas-postgresql-and-docker-56fbf2bc1105).
 
 Para ejecutar el servidor se deberá activar a través de los comandos
 
@@ -55,7 +57,7 @@ La información obtenida es visualizada en formato de _tarjeta_, y se mantiene f
 # Tarea 2.- Servicio de Evaluación Ambiental
 
 Inicialmente, al abrir la pestaña _SEIA_ no se visualizarán registros, los que en primera instancia deben ser descargados. Para ello, ocupar el botón de "Cargar proyectos".
-Al hacerlo, se generará una entidad del modelo para cada uno de los proyectos obtenidos mediante _web scrapping_. Para obtener estos se ocuparon las librerías `requests y [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)`, y posteriormente fueron procesados en `pandas` para adaptar la información a los formatos de datos correctos.
+Al hacerlo, se generará una entidad del modelo para cada uno de los proyectos obtenidos mediante _web scrapping_. Para obtener estos se ocuparon las librerías `requests y BeautifulSoup`, y posteriormente fueron procesados en `pandas` para adaptar la información a los formatos de datos correctos.
 
 La información obtenida es visualizada en formato de tabla. Al igual que con _Bike Santiago_, esta se mantiene fija en la base de datos hasta el momento en que se quiera actualizar la lista de proyectos, donde se eliminan los registros con el fin de evitar duplicados al generar nuevos, por lo que en una futura iteración se podría mejorar a través de identificar solo los nuevos elementos.
 
@@ -65,14 +67,14 @@ Notas:
 
 ```
 [26] # for i, _ in enumerate(iter(bool, True), start=1): # Busca valores hasta el infinito
-[27]        for i in range(1, 11):
+[27] for i in range(1, 11):
 ```
 
 - El archivo JSON se guarda de manera local en la carpeta del proyecto, en la ubicación `seia/json/exportado.json`
 
 # Panel de administrador
 
-Todas las entidades generadas pueden ser visualizadas y modificadas en el panel de administrador, al cual se puede acceder a través de la barra de navegación. Para ingresar a él se dejó de manera preconfigurada una cuenta de superuser con los datos:
+Todas las entidades generadas pueden ser visualizadas y modificadas en el panel de administrador, al cual se puede acceder a través de la barra de navegación. Para ingresar a él se dejó de manera preconfigurada una cuenta de *superuser* con los datos:
 
 ```
 user: chr
