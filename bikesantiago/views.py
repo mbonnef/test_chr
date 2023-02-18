@@ -52,7 +52,7 @@ def actualizar_estaciones(request):
     df['arrendando'] = df['arrendando'].astype(int)
     df['devolviendo'] = df['devolviendo'].astype(int)
 
-    # Cargado de datos
+    # Carga de datos en modelo
 
     for index, row in df.iterrows():
         model = Estacion()

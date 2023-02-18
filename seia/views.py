@@ -24,7 +24,7 @@ def actualizar_proyectos(request):
 
     try:
         # for i, _ in enumerate(iter(bool, True), start=1): # Busca valores hasta el infinito
-        for i in range(1, 10):
+        for i in range(1, 11):
 
             url = 'https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php?_paginador_fila_actual=' + \
                 str(i)
