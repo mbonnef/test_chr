@@ -47,10 +47,16 @@ y finalmente abrir la dirección [http://127.0.0.1:8000/](http://127.0.0.1:8000/
 
 Desde el _home_ se puede acceder a las distintas partes del proyecto, a través de los links presentes en la barra de navegación.
 
+![image](https://user-images.githubusercontent.com/97198953/219827121-5198dc60-47f4-4b38-973e-6866c3cb98bd.png)
+
+
 # Tarea 1.- Bike Santiago
 
 Inicialmente, al abrir la pestaña _Bike Santiago_ no se visualizarán registros, los que en primera instancia deben ser descargados. Para ello, ocupar el botón de "Cargar estaciones".
 Al hacerlo, se generará una entidad del modelo para cada una de las estaciones obtenidas a través de la API. Para obtener estas se ocupó la descarga de elementos a través de la librería `requests`, y posteriormente fueron procesados en `pandas` para adaptar la información a los formatos de datos correctos.
+
+![image](https://user-images.githubusercontent.com/97198953/219827816-a0062961-1595-4e2a-a458-62bcfb13a325.png)
+
 
 La información obtenida es visualizada en formato de _tarjeta_, y se mantiene fija en la base de datos hasta el momento en que se quiera actualizar la lista de estaciones, para lo cual se generó el botón _Actualizar estaciones_. Con el fin de evitar duplicados, cada actualización elimina las entidades existentes para volver a generarlas. Se identifica como un aspecto a mejorar en una futura iteración del proyecto el solo eliminar aquellas estaciones que hayan sido actualizadas desde la última actualización.
 
@@ -61,9 +67,11 @@ Al hacerlo, se generará una entidad del modelo para cada uno de los proyectos o
 
 La información obtenida es visualizada en formato de tabla. Al igual que con _Bike Santiago_, esta se mantiene fija en la base de datos hasta el momento en que se quiera actualizar la lista de proyectos, donde se eliminan los registros con el fin de evitar duplicados al generar nuevos, por lo que en una futura iteración se podría mejorar a través de identificar solo los nuevos elementos.
 
+![image](https://user-images.githubusercontent.com/97198953/219827849-e4d54ef0-bff7-48e5-be0c-448e3d1c6984.png)
+
 Notas:
 
-- Para la prueba del proyecto se limitó a una búsqueda por 10 páginas de un total de 28.446 existentes al momento de la realización de este. Para modificar el código y permitir que este itere sober la totalidad de las páginas, en el archivo `seia/models.py` se descomentar la línea 26 y comentar la línea 27
+- Para la prueba del proyecto se limitó a una búsqueda por 10 páginas de un total de 28.446 existentes al momento de la realización de este, debido al tiempo que toma descargar la totalidad de la información. Para modificar el código y permitir que este itere sober la totalidad de las páginas, en el archivo `seia/views.py` se debe descomentar la línea 26 y comentar la línea 27
 
 ```
 [26] # for i, _ in enumerate(iter(bool, True), start=1): # Busca valores hasta el infinito
@@ -82,3 +90,5 @@ python manage.py createsuperuser
 ```
 
 Se pedirá que se ingrese un nombre de usuario, correo y contraseña. Posteriormente, se puede ingresar con ellos al panel de administrador.
+
+![image](https://user-images.githubusercontent.com/97198953/219827870-afe2dc30-1699-4a00-9ff1-ee2919037312.png)
