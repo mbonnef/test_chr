@@ -6,7 +6,7 @@ from django.db import models
 class Proyecto(models.Model):
 
     no = models.IntegerField()
-    nombre = models.CharField(max_length=80)
+    nombre = models.TextField()
     tipo = models.CharField(max_length=80)
     region = models.CharField(max_length=80)
     tipologia = models.CharField(max_length=80)

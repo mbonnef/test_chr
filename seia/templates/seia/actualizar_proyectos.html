@@ -1,0 +1,24 @@
+{% extends 'padres/base.html' %} {% block title %}
+
+<title>Test CHR - Servicio de Evaluación de Impacto Ambiental</title>
+
+{% endblock title %} {% block header %}
+
+<h1 class="fw-bolder">Test Práctico CHR - Developer</h1>
+
+<p class="lead mb-0">Tarea 2 : Servicio de Evaluación de Impacto Ambiental</p>
+
+{% endblock header %} {% block contenido %}
+
+<p>
+  <i>Proyectos actualizados.</i>
+</p>
+<a
+  class="btn btn-outline-primary"
+  href="{% url 'ver_proyectos' %}"
+  role="button"
+  >Volver</a
+>
+<p></p>
+
+{% endblock contenido %}

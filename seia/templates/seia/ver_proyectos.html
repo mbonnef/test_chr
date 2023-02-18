@@ -1,0 +1,76 @@
+{% extends 'padres/base.html' %} {% block title %}
+
+<title>Test CHR - Servicio de Evaluación Ambiental</title>
+
+{% endblock title %} {% block header %}
+
+<h1 class="fw-bolder">Test Práctico CHR - Developer</h1>
+
+<p class="lead mb-0">Tarea 2 : Servicio de Evaluación Ambiental<br> Encargo: Crear un script para obtener los datos de las tablas de la página ( https://seia.sea.gob.cl/busqueda/buscarProyectoAction.php ).<br>Estos se deberán guardar en un modelo de Django creado para eso, los que deben poder ser visualizados en una vista.</p>
+
+{% endblock header %}
+{% block contenido %}
+
+<div class="row">
+  <div class="row">
+
+    {% if proyectos %}
+
+    <a
+    class="btn btn-outline-primary"
+    href="{% url 'actualizar_estaciones' %}"
+    role="button"
+    >Actualizar proyectos</a><p></p> 
+
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Region</th>
+            <th scope="col">Tipología</th>
+            <th scope="col">Titular</th>
+            <th scope="col">Inversión (MMU$)</th>
+            <th scope="col">Fecha Presentación / Fecha de Ingreso(*)</th>
+            <th scope="col">Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+            {% for proyecto in proyectos %}
+                
+            <tr>
+                <th scope="row">{{ proyecto.no }}</th>
+                <td>{{ proyecto.nombre }}</td>
+                <td>{{ proyecto.tipo }}</td>
+                <td>{{ proyecto.region }}</td>
+                <td>{{ proyecto.tipologia }}</td>
+                <td>{{ proyecto.titular }}</td>
+                <td>{{ proyecto.inversion }}</td>
+                <td>{{ proyecto.fecha }}</td>
+                <td>{{ proyecto.estado }}</td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+      </table>
+
+      {% else %}
+
+      <p>
+        <i>No hay proyectos cargados. Para hacerlo, presionar en el botón:</i>
+      </p>
+      <a
+        class="btn btn-outline-primary"
+        href="{% url 'actualizar_proyectos' %}"
+        role="button"
+        >Cargar proyectos</a
+      >
+      <p></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock contenido %}

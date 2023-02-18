@@ -1,0 +1,24 @@
+{% extends 'padres/base.html' %} {% block title %}
+
+<title>Test CHR - Bike Santiago</title>
+
+{% endblock title %} {% block header %}
+
+<h1 class="fw-bolder">Test Práctico CHR - Developer</h1>
+
+<p class="lead mb-0">Tarea 1 : Bike Santiago</p>
+
+{% endblock header %} {% block contenido %}
+
+<p>
+  <i>Estaciones actualizadas.</i>
+</p>
+<a
+  class="btn btn-outline-primary"
+  href="{% url 'ver_estaciones' %}"
+  role="button"
+  >Volver</a
+>
+<p></p>
+
+{% endblock contenido %}

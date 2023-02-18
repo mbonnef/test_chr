@@ -1,0 +1,64 @@
+{% extends 'padres/base.html' %} {% block title %}
+
+<title>Test CHR - Bike Santiago</title>
+
+{% endblock title %} {% block header %}
+
+<h1 class="fw-bolder">Test Práctico CHR - Developer</h1>
+
+<p class="lead mb-0">Tarea 1 : Bike Santiago<br> Encargo: Cargar los datos desde la API pública Bike Santiago ( http://api.citybik.es/v2/networks/bikesantiago ) y guardarlos dentro de un modelo generado en Django. Posteriormente, generar una vista para poder visualizarla.</p>
+
+{% endblock header %}
+{% block contenido %}
+
+<div class="row">
+  <div class="row">
+    {% if estaciones %}
+    <a
+    class="btn btn-outline-primary"
+    href="{% url 'actualizar_estaciones' %}"
+    role="button"
+    >Actualizar estaciones</a><p></p>
+    {% for estacion in estaciones %}
+      <div class="col-lg-4">
+        <div class="card mb-5">
+
+          <div class="card-body">
+            <div class="small text-muted">
+              Última actualización: {{ estacion.ultima_actualizacion }}
+            </div>
+            <h2 class="card-title h2">{{ estacion.direccion }}</h2>
+
+            <p class="card-text">
+              <b>UID:</b> {{ estacion.uid }}<br />
+              <b>Cupos:</b> {{ estacion.slots }}<br />
+              <b>Código postal:</b> {{ estacion.codigo_postal }}<br />
+              <b>Cantidad de bicicletas:</b> {{ estacion.cant_bicicletas_n }}<br />
+              <b>Cuenta con bicicletas eléctricas:</b> {{ estacion.bicicletas_e }}<br />
+              <b>Cantidad de bicicletas eléctricas:</b> {{ estacion.bicicletas_e }}<br />
+              <b>Bicicletas arrendadas:</b> {{ estacion.arrendando }}<br />
+              <b>Bicicletas devueltas:</b> {{ estacion.devolviendo }}<br />
+              <b>Terminal de pago:</b> {{ estacion.terminal_pago }}<br />
+              <b>Formas de pago:</b> {{ estacion.formas_pago }}<br />
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {% endfor %} {% else %}
+
+      <p>
+        <i>No hay estaciones cargadas. Cargarlas con el botón</i>
+      </p>
+      <a
+        class="btn btn-outline-primary"
+        href="{% url 'actualizar_estaciones' %}"
+        role="button"
+        >Cargar estaciones</a
+      >
+      <p></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock contenido %}
