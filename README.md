@@ -21,7 +21,7 @@ La lista completa de ellas se encuentra en el archivo ``requirements.txt``
 Se recomienda instalar las librerías en un entorno virtual, para lo cual se deben seguir los siguientes pasos:
 
 ```
-git clone [url](https://github.com/mbonnef/test_chr)
+git clone https://github.com/mbonnef/test_chr
 cd test_chr
 python -m venv venv
 . venv/Scripts/activate
