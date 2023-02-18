@@ -16,4 +16,4 @@ class Proyecto(models.Model):
     estado = models.CharField(max_length=80)
 
     def __str__(self):
-        return f'N°: {self.no} - Nombre: {self.nombre}'
+        return f'N°: {self.no} - {self.nombre}'

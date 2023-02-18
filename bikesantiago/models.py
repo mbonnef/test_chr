@@ -19,4 +19,4 @@ class Estacion(models.Model):
     formas_pago = models.CharField(max_length=80)
 
     def __str__(self):
-        return f'UID: {self.uid} - Dirección: {self.direccion}'
+        return f'UID {self.uid} - {self.direccion}'
